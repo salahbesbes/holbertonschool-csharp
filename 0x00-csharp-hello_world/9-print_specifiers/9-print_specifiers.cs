@@ -8,8 +8,8 @@ class Program
         double percent = .7553;
         double currency = 98765.4321;
         string[] cultureNames = { "en-US" };
-        CultureInfo culture = new CultureInfo("en-US");
-        System.Console.WriteLine($"Percent: {percent:p1} tip");
-        System.Console.WriteLine($"Currency: {currency.ToString("C2", culture)}");
+        CultureInfo culture = new CultureInfo("en-US.utf-8");
+        Console.WriteLine($"Percent: {percent.ToString("0.00%")}");
+        Console.WriteLine($"Currency: {currency.ToString("C2", culture)}");
     }
 }
