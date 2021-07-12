@@ -10,6 +10,6 @@ class Program
         string[] cultureNames = { "en-US" };
         CultureInfo culture = new CultureInfo("en-US");
         System.Console.WriteLine($"Percent: {percent:p1} tip");
-        System.Console.WriteLine(currency.ToString("C2", culture));
+        System.Console.WriteLine($"Currency: {currency.ToString("C2", culture)}");
     }
 }
