@@ -1,2 +1,0 @@
-# holbertonschool-csharp
-# holbertonschool-csharp
