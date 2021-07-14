@@ -9,11 +9,14 @@ class Array
             Console.WriteLine();
             return;
         }
+
+
+
+
         char sep = ' ';
-        array.Reverse();
-        for (int i = 0; i < array.Length; i++)
+        for (int i = array.Length - 1; i >= 0; i--)
         {
-            if (i == array.Length - 1) sep = '\n';
+            if (i == 0) sep = '\n';
             Console.Write($"{array[i]}{sep}");
         }
     }
