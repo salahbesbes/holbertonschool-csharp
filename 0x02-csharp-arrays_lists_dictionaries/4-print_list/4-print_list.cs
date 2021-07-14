@@ -6,6 +6,13 @@ class List
     {
 
         var newList = new System.Collections.Generic.List<int>();
+
+        if (size < 0)
+        {
+            Console.WriteLine("Size cannot be negative");
+            return null;
+        }
+
         char sep = ' ';
         for (int i = 0; i < size; i++)
         {
