@@ -8,7 +8,6 @@ class Dictionary
 
         foreach (KeyValuePair<string, int> item in myDict)
         {
-            Console.WriteLine(item.Value);
             newDict.Add(item.Key, item.Value * 2);
         }
 
