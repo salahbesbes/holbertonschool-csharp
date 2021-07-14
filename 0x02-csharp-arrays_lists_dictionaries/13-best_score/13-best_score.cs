@@ -7,13 +7,11 @@ class Dictionary
 {
     public static string BestScore(Dictionary<string, int> myList)
     {
-        var orderedValue = myList.OrderBy(item => item.Value);
-        if (orderedValue.Last().Key == null)
-            return "None";
-        else
-        {
 
-            return orderedValue.Last().Key;
-        }
+        if (myList.Count == 0) return "None";
+        var orderedValue = myList.OrderBy(item => item.Value);
+
+        return orderedValue.Last().Key;
+
     }
 }
