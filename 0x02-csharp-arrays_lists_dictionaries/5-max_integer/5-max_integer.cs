@@ -11,11 +11,12 @@ class List
             return -1;
         }
 
-        int MinValue = -2147483648;
+        int MinValue = int.MinValue;
         for (int i = 0; i < myList.Count; i++)
         {
             if (myList[i] > MinValue)
             {
+
                 MinValue = myList[i];
             }
         }
