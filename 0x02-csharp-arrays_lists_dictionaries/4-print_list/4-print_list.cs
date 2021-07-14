@@ -7,7 +7,6 @@ class List
 
         var newList = new System.Collections.Generic.List<int>();
 
-        if (size == null) return null;
         if (size < 0)
         {
             Console.WriteLine("Size cannot be negative");
