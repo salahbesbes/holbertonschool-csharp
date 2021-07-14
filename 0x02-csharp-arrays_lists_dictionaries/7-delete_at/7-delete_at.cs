@@ -8,7 +8,7 @@ class List
         System.Collections.Generic.List<int> sub2;
 
         sub1 = myList.GetRange(0, index);
-        sub2 = myList.GetRange(index + 1, index);
+        sub2 = myList.GetRange(index + 1, myList.Count);
         myList.Clear();
         myList.AddRange(sub1);
         myList.AddRange(sub2);
