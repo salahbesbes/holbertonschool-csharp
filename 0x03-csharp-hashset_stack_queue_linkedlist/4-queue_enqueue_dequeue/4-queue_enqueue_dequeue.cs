@@ -11,7 +11,7 @@ class MyQueue
         else Console.WriteLine($"First item: {aQueue.Peek()}");
 
         aQueue.Enqueue(newItem);
-        if (aQueue.Contains(search)) Console.WriteLine($"Queue contains \"{search}\": {aQueue.Contains(search)}");
+        Console.WriteLine($"Queue contains \"{search}\": {aQueue.Contains(search)}");
 
 
         if (aQueue.Contains(search))
