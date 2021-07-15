@@ -5,6 +5,8 @@ class LList
 {
     public static int Pop(LinkedList<int> myLList)
     {
-        return myLList.First.Value;
+        var deletedNode = myLList.First;
+        myLList.Remove(deletedNode);
+        return deletedNode.Value;
     }
 }
