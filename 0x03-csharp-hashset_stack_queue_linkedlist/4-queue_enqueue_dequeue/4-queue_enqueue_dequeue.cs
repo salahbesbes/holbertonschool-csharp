@@ -17,8 +17,9 @@ class MyQueue
         if (aQueue.Contains(search))
         {
             string removed;
+            int initLength = aQueue.Count;
 
-            for (int i = 0; i < aQueue.Count; i++)
+            for (int i = 0; i < initLength; i++)
             {
                 removed = aQueue.Dequeue();
                 if (removed == search) break;
