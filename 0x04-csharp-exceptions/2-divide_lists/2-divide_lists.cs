@@ -22,7 +22,6 @@ class List
             catch (Exception)
             {
                 Console.WriteLine("Out of range");
-                break;
             }
         }
         return res;
