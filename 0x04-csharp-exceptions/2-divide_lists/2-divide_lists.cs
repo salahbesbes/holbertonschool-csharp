@@ -5,6 +5,7 @@ class List
     public static List<int> Divide(List<int> list1, List<int> list2, int listLength)
     {
         var res = new List<int>();
+        if (list1 == null || list2 == null) return res;
 
         for (int i = 0; i < listLength; i++)
         {
@@ -12,6 +13,7 @@ class List
             {
                 int el1 = list1[i];
                 int el2 = list2[i];
+
                 try
                 {
                     int div = el1 / el2;
@@ -24,13 +26,11 @@ class List
                 }
 
             }
-            catch (System.Exception)
+            catch (Exception)
             {
-                Console.WriteLine("Out of range");
+                Console.WriteLine($"Out of range");
                 break;
             }
-
-
         }
         return res;
     }
