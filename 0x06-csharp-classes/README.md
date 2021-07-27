@@ -1,1 +1,1 @@
-# Class AND NameSpacing
+# Class AND NameSpacing.
