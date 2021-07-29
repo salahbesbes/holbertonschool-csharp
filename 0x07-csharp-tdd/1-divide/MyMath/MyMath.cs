@@ -14,13 +14,27 @@ namespace MyMath
         /// <returns>modified matrix </returns>
         public static int[,] Divide(int[,] matrix, int num)
         {
-
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            if (matrix == null) return null;
+            if (num == 0 )
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                Console.WriteLine("Num cannot be 0");
+                return null;
+            }
+
+            try
+            {
+
+                for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                    matrix[i, j] /= num;
+                    for (int j = 0; j < matrix.GetLength(1); j++)
+                    {
+                        matrix[i, j] /= num;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                return null;
             }
             return matrix;
         }
