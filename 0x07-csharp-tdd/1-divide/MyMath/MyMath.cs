@@ -15,28 +15,28 @@ namespace MyMath
         public static int[,] Divide(int[,] matrix, int num)
         {
             if (matrix == null) return null;
-            if (num == 0 )
+            if (num == 0)
             {
                 Console.WriteLine("Num cannot be 0");
                 return null;
             }
 
-            try
-            {
 
                 for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                    for (int j = 0; j < matrix.GetLength(1); j++)
+                    try
                     {
-                        matrix[i, j] /= num;
+                        for (int j = 0; j < matrix.GetLength(1); j++)
+                        {
+                            matrix[i, j] /= num;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        return matrix;
                     }
                 }
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-            return matrix;
+                return matrix;
         }
     }
 }
