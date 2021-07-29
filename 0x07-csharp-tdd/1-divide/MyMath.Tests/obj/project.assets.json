@@ -1398,6 +1398,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "MyMath/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/MyMath.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyMath.dll": {}
+        }
       }
     }
   },
@@ -5097,12 +5107,18 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "MyMath/1.0.0": {
+      "type": "project",
+      "path": "../MyMath/MyMath.csproj",
+      "msbuildProject": "../MyMath/MyMath.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "Microsoft.NETCore.App >= 2.1.0",
+      "MyMath >= 1.0.0",
       "NUnit >= 3.12.0",
       "NUnit3TestAdapter >= 3.16.1"
     ]
@@ -5141,7 +5157,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\New folder\\holberton\\0x07-csharp-tdd\\1-divide\\MyMath\\MyMath.csproj": {
+              "projectPath": "E:\\New folder\\holberton\\0x07-csharp-tdd\\1-divide\\MyMath\\MyMath.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
