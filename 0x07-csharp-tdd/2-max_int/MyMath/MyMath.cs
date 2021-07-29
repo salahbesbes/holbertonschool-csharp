@@ -4,8 +4,13 @@ using System.Collections.Generic;
 
 namespace MyMath
 {
+    /// <summary>max list</summary
     public class Operations
     {
+
+        /// <summary> get max integer </summary>
+        /// <param name="nums">list of integers</param>
+        /// <returns> max int </returns>
         public static int Max(List<int> nums)
         {
             if (nums == null || nums.Count == 0 )
