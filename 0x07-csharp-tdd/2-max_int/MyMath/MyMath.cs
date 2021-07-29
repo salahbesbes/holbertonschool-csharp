@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 
 namespace MyMath
 {
@@ -13,7 +13,17 @@ namespace MyMath
                 return 0;
             }
 
-            return nums.Max();
+            int MinValue = int.MinValue;
+            for (int i = 0; i < nums.Count; i++)
+            {
+                if (nums[i] > MinValue)
+                {
+
+                    MinValue = nums[i];
+                }
+            }
+
+            return MinValue;
         }
     }
 }
