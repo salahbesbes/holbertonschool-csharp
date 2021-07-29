@@ -9,11 +9,13 @@ namespace MyMath.Tests
         public void Setup()
         {
         }
-
-        [Test]
-        public void Test1()
+        [TestCase(20, 0)]
+        [TestCase(10, 10)]
+        [TestCase(80, -60)]
+        public void addition(int value, int valueb)
         {
-            Assert.Pass();
+            var result = Operations.Add(value, valueb);
+            Assert.AreEqual(20, result);
         }
     }
 }
