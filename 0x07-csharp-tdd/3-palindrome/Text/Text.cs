@@ -37,7 +37,6 @@ namespace Text
             string stripped =  eliminatePunctuation(s);
             stripped = stripped.Replace(" ", "");
             int length = stripped.Length;
-            Console.WriteLine(stripped);
             string reverse  = "";
 
             for (int i = length - 1; i >= 0; i--)
