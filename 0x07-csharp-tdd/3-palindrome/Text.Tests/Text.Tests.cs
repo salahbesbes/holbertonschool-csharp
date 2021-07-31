@@ -15,6 +15,7 @@ namespace Text.Tests
         [TestCase("Bvccvb")]
         [TestCase("A man, a plan, a canal: Panama.")]
         [TestCase("")]
+        [TestCase("a")]
         public void TestCasesExpectedTrue(string input)
         {
             bool expected = true;
