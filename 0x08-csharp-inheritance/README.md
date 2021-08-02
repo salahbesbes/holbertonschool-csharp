@@ -1,1 +1,1 @@
-# inhiritence c#
+# class Inhiritance and Interfaces
