@@ -58,7 +58,7 @@ class Rectangle : Shape
         set
         {
             if (value < 0) throw new ArgumentException("Height must be greater than or equal to 0");
-            else height = value;
+            else { width = value; height = value; }
         }
     }
 
@@ -77,7 +77,7 @@ class Rectangle : Shape
     /// <returns></returns>
     public override string ToString()
     {
-        return $"[Rectangle] {width} / {height}";
+        return $"[{this.GetType().Name}] {width} / {height}";
     }
 
 }
