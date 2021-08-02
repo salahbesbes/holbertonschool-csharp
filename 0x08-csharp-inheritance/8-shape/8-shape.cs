@@ -12,8 +12,8 @@ class Square : Rectangle
         get => size; set
         {
             if (value < 0) throw new ArgumentException("ArgumentException ");
-            else size = value;
-        }
+            else { Width = value; Height = value; size = value; }
+            }
     }
 }
 
@@ -58,7 +58,7 @@ class Rectangle : Shape
         set
         {
             if (value < 0) throw new ArgumentException("Height must be greater than or equal to 0");
-            else { width = value; height = value; }
+            else height = value;
         }
     }
 
