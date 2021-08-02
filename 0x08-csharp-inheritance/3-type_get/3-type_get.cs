@@ -11,11 +11,12 @@ internal class Obj
 		MethodInfo[] listMethods = myObj.GetType().GetMethods();
 		PropertyInfo[] listproperties = myObj.GetType().GetProperties();
 
+		Console.WriteLine("Int32 Properties:");
 		foreach (var item in listproperties)
 		{
 			Console.WriteLine(item.Name);
 		}
-
+		Console.WriteLine("Int32 Methods:");
 		foreach (var item in listMethods)
 		{
 			Console.WriteLine(item.Name);
