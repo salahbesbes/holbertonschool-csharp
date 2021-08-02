@@ -1,0 +1,10 @@
+
+
+
+ 		<DocumentationFile>bin$(Configuration)$(TargetFramework)$(AssemblyName).xml</DocumentationFile>
+		<DocumentationFile>bin$(Configuration)$(TargetFramework)$(AssemblyName).xml</DocumentationFile>
+t<DocumentationFile>bin$(Configuration)$(TargetFramework)$(AssemblyName).xml</DocumentationFile>
+t	 <DocumentationFile>bin$(Configuration)$(TargetFramework)$(AssemblyName).xml</DocumentationFile>
+t	 <DocumentationFile>bin$(Configuration)$(TargetFramework)$(AssemblyName).xml</DocumentationFile>
+
+
