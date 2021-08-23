@@ -6,13 +6,35 @@
 /// </summary>
 class Square : Rectangle
 {
+    public new int Width
+    {
+        get => base.Width; set
+        {
+            if(value != size)
+            {
+                Size = value;
+            }
+        }
+    }
+
+    public new int Height
+    {
+        get => base.Height; set
+        {
+            if (value != size)
+            {
+                Size = value;
+            }
+        }
+    }
+
     private int size;
     public int Size
     {
         get => size; set
         {
             if (value < 0) throw new ArgumentException("Size must be greater than or equal to 0");
-            else { Width = value; Height = value; size = value; }
+            else { base.Width = value; base.Height = value; size = value; }
         }
     }
 }
