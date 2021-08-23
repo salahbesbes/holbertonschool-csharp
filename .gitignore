@@ -6,7 +6,7 @@
 .gitignore
 *.txt
 **/*.sln
-
+[Pp]rogram
 # User-specific files
 *.rsuser
 *.suo
