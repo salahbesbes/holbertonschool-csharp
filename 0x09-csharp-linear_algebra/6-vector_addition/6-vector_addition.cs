@@ -1,7 +1,12 @@
 ﻿using System;
 
+/// <summary> Vector Math Class  </summary>
 public class VectorMath
 {
+    /// <summary> calculate the sum of 2 vectors </summary>
+    /// <param name="vector1">vector 1 </param>
+    /// <param name="vector2">vector 2</param>
+    /// <returns> new array of the sum </returns>
     public static double[] Add(double[] vector1, double[] vector2)
     {
         
