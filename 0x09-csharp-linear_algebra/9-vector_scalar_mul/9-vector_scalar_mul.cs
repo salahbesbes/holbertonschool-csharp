@@ -14,9 +14,9 @@ public class VectorMath
             return error;
 
 
-        foreach (var point in vector)
+        for (int i = 0; i < vector.Length; i++)
         {
-            Math.Round(point * scalar, 2);
+            vector[i] = Math.Round(vector[i] * scalar, 2);
         }
 
         return vector;
