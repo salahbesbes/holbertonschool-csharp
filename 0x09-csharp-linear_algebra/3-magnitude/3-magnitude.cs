@@ -1,7 +1,5 @@
 ﻿using System;
 
-using System;
-
 /// <summary> Vector Math Class  </summary>
 class VectorMath
 {
@@ -12,7 +10,7 @@ class VectorMath
     {
         double res = 0;
 
-        if (vector.Length != 2 || vector.Length != 3)
+        if (vector.Length != 2 && vector.Length != 3)
             return -1;
 
 
