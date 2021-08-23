@@ -14,6 +14,8 @@ public class MatrixMath
 
         if (matrix1.GetLength(0) != matrix2.GetLength(0))
             return error;
+        if (matrix1.GetLength(1) != matrix2.GetLength(1))
+            return error;
         if (matrix1.GetLength(1) != 2 && matrix1.GetLength(1) != 3)
             return error;
         if (matrix2.GetLength(1) != 2 && matrix2.GetLength(1) != 3)
