@@ -1,1 +1,1 @@
-# linear Algebra
+# liear algebra

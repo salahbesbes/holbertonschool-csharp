@@ -1,5 +1,7 @@
 ﻿using System;
 
+using System;
+
 /// <summary> Vector Math Class  </summary>
 class VectorMath
 {
