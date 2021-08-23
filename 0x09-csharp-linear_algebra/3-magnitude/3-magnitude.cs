@@ -1,7 +1,7 @@
 ﻿using System;
 
 /// <summary> Vector Math Class  </summary>
-class VectorMath
+public class VectorMath
 {
     /// <summary> calculate te length of the vector   </summary>
     /// <param name="vector"> array contain the coordoate of the 2D/3D vector   </param>
@@ -19,6 +19,6 @@ class VectorMath
             res += Math.Pow(point, 2);
         }
 
-        return Math.Sqrt(res);
+        return Math.Round(Math.Sqrt(res), 2);
     }
 }
