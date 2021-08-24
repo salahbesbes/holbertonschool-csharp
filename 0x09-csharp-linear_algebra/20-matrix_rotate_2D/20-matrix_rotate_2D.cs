@@ -62,11 +62,11 @@ class MatrixMath
         double[] newYPos = new double[2];
 
 
-        newXPos[0] = Math.Round( Math.Cos(angle), 0);
-        newXPos[1] = Math.Round( Math.Sin(angle), 0);
+        newXPos[0] = Math.Cos(angle);
+        newXPos[1] = Math.Sin(angle);
 
-        newYPos[0] = - Math.Round( Math.Sin(angle), 0);
-        newYPos[1] = Math.Round( Math.Cos(angle), 0);
+        newYPos[0] = -Math.Sin(angle);
+        newYPos[1] = Math.Cos(angle);
 
         double[,] res = new double[2, 2];
 
@@ -74,8 +74,8 @@ class MatrixMath
         {
             double[] row = MatrixMath.GetRow(matrix, i);
 
-            res[i, 0] = row[0] * newXPos[0] + row[1] * newYPos[0];
-            res[i, 1] = row[0] * newXPos[1] + row[1] * newYPos[1];
+            res[i, 0] = Math.Round( row[0] * newXPos[0] + row[1] * newYPos[0], 2);
+            res[i, 1] = Math.Round( row[0] * newXPos[1] + row[1] * newYPos[1], 2);
 
         }
 
