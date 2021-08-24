@@ -17,6 +17,7 @@ class MatrixMath
                 .Select(x => matrix[rowNumber, x])
                 .ToArray();
     }
+
     /// <summary> calculate the dot product of  2 vectors </summary>
     /// <param name="vector1"> vector 1 </param>
     /// <param name="vector2"> vector 2 </param>
@@ -42,11 +43,18 @@ class MatrixMath
         return res;
 
     }
+
+    /// <summary> rotate matrix </summary>
+    /// <param name="matrix"> matrix </param>
+    /// <param name="angle">radiant angle</param>
+    /// <returns> new matrix </returns>
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
         double[,] error = new double[1, 1] { { -1 } };
 
         if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
+            return error;
+        if ((180 / Math.PI) * angle > 360)
             return error;
 
 
@@ -60,12 +68,7 @@ class MatrixMath
         newYPos[0] = - Math.Round( Math.Sin(angle), 0);
         newYPos[1] = Math.Round( Math.Cos(angle), 0);
 
-        
-
-
-
         double[,] res = new double[2, 2];
-
 
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
@@ -75,6 +78,7 @@ class MatrixMath
             res[i, 1] = row[0] * newXPos[1] + row[1] * newYPos[1];
 
         }
+
         return res;
 
 
