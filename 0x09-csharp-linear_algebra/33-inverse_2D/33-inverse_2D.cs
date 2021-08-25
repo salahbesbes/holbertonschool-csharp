@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 
+/// <summary> matrix maath </summary>
 internal class MatrixMath
 {
     /// <summary> get the specific column from a matrix </summary>
@@ -184,8 +185,10 @@ internal class MatrixMath
         double c = matrix[1, 0];
         double d = matrix[1, 1];
 
+        double[,] tmpMatrix = new double[2, 2] { { d, -b }, { -c, a } };
+
         double scalar = 1 / (a * d - b * c);
 
-        return MultiplyScalar(matrix, scalar);
+        return MultiplyScalar(tmpMatrix, scalar);
     }
 }
