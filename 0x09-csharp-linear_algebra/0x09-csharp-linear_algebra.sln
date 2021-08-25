@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "25-matrix_transpose", "25-m
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "28-determinant", "28-determinant\28-determinant.csproj", "{32169EC2-BD31-46ED-9755-5C779CBF9AE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "30-cross_product", "30-cross_product\30-cross_product.csproj", "{CCC20C1B-CDB0-4A45-8F5B-CA7DCAE15905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC20C1B-CDB0-4A45-8F5B-CA7DCAE15905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC20C1B-CDB0-4A45-8F5B-CA7DCAE15905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC20C1B-CDB0-4A45-8F5B-CA7DCAE15905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC20C1B-CDB0-4A45-8F5B-CA7DCAE15905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
