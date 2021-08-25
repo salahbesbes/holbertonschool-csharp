@@ -1,5 +1,5 @@
 ﻿/// <summary> matrix Math </summary>
-internal class MatrixMath
+internal class VectorMath
 {
     /// <summary> create the croos product of 2 vector </summary>
     /// <param name="vector1"> vect 1 </param>
