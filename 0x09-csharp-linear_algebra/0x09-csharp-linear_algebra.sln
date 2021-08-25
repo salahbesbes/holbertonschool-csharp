@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18-matrix_matrix_mul", "18-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20-matrix_rotate_2D", "20-matrix_rotate_2D\20-matrix_rotate_2D.csproj", "{D7E19BCF-545F-4EFA-89D2-903E58655B17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25-matrix_transpose", "25-matrix_transpose\25-matrix_transpose.csproj", "{B233CCE0-AE77-47FA-B8C7-79E25D566D24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "25-matrix_transpose", "25-matrix_transpose\25-matrix_transpose.csproj", "{B233CCE0-AE77-47FA-B8C7-79E25D566D24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "28-determinant", "28-determinant\28-determinant.csproj", "{32169EC2-BD31-46ED-9755-5C779CBF9AE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{B233CCE0-AE77-47FA-B8C7-79E25D566D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B233CCE0-AE77-47FA-B8C7-79E25D566D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B233CCE0-AE77-47FA-B8C7-79E25D566D24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32169EC2-BD31-46ED-9755-5C779CBF9AE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
