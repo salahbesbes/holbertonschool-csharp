@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 /// <summary> matrix Math </summary>
 internal class MatrixMath
@@ -110,6 +111,7 @@ internal class MatrixMath
                 matrix = AddColumn(matrix, col1);
                 matrix = AddColumn(matrix, col2);
 
+                PrintMatrix(matrix);
                 for (int i = 0; i < width; i++)
                 {
                     diagonal = GetForwordDiagonal(matrix, i);
@@ -134,10 +136,22 @@ internal class MatrixMath
                     }
                     sumBackwardDiagonal += productDiagonal;
                 }
-                return sumForwordDiagonal - sumBackwardDiagonal;
+                return Math.Round(sumForwordDiagonal - sumBackwardDiagonal, 2);
             }
         }
 
         return -1;
+    }
+
+    private static void PrintMatrix(double[,] matrix)
+    {
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                Console.Write("{0}\t", matrix[row, col]);
+            }
+            Console.WriteLine();
+        }
     }
 }
