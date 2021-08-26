@@ -158,6 +158,7 @@ internal class MatrixMath
                     Math.Round(matrix[i, j] *= scalar, 2);
                 }
             }
+
             return matrix;
         }
         return new double[,] { { -1 } };
@@ -173,12 +174,12 @@ internal class MatrixMath
         width = matrix.GetLength(1);
         height = matrix.GetLength(0);
 
-        double det = Determinant(matrix);
-        if (det == 0 || det == -1 ) return error;
-
+        
         if (height == 2 && width == 2)
         {
-            
+
+            double det = Determinant(matrix);
+            if (det == 0) return error;
 
             double a = matrix[0, 0];
             double b = matrix[0, 1];

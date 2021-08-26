@@ -23,22 +23,24 @@ internal class MatrixMath
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
         double[,] error = new double[1, 1] { { -1 } };
+        double width = matrix.GetLength(1);
+        double height = matrix.GetLength(0);
 
-        if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
-            return error;
-        if ((180 / Math.PI) * angle > 360)
-            return error;
 
-        double[,] res = new double[2, 2];
-
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        if (height == 2 && width == 2)
         {
-            double[] row = MatrixMath.GetRow(matrix, i);
+            double[,] res = new double[2, 2];
 
-            res[i, 0] = Math.Round(row[0] * Math.Cos(angle) - row[1] * Math.Sin(angle), 2);
-            res[i, 1] = Math.Round(row[0] * Math.Sin(angle) + row[1] * Math.Cos(angle), 2);
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                double[] row = MatrixMath.GetRow(matrix, i);
+
+                res[i, 0] = Math.Round(row[0] * Math.Cos(angle), 2) - Math.Round( row[1] * Math.Sin(angle), 2);
+                res[i, 1] = Math.Round(row[0] * Math.Sin(angle), 2) + Math.Round( row[1] * Math.Cos(angle), 2);
+            }
+
+            return res;
         }
-
-        return res;
+        return error;
     }
 }
