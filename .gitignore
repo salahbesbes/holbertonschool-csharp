@@ -7,6 +7,9 @@
 *.txt
 **/*.sln
 [Pp]rogram.cs
+
+**main**
+
 # User-specific files
 *.rsuser
 *.suo

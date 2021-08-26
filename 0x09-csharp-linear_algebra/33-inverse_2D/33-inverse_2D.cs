@@ -158,7 +158,6 @@ internal class MatrixMath
                     Math.Round(matrix[i, j] *= scalar, 2);
                 }
             }
-
             return matrix;
         }
         return new double[,] { { -1 } };
@@ -174,21 +173,24 @@ internal class MatrixMath
         width = matrix.GetLength(1);
         height = matrix.GetLength(0);
 
-        if (height != 2 || width != 2)
-            return error;
-
         double det = Determinant(matrix);
-        if (det == 0) return error;
+        if (det == 0 || det == -1 ) return error;
 
-        double a = matrix[0, 0];
-        double b = matrix[0, 1];
-        double c = matrix[1, 0];
-        double d = matrix[1, 1];
+        if (height == 2 && width == 2)
+        {
+            
 
-        double[,] tmpMatrix = new double[2, 2] { { d, -b }, { -c, a } };
+            double a = matrix[0, 0];
+            double b = matrix[0, 1];
+            double c = matrix[1, 0];
+            double d = matrix[1, 1];
 
-        double scalar = 1 / (a * d - b * c);
+            double[,] tmpMatrix = new double[2, 2] { { d, -b }, { -c, a } };
 
-        return MultiplyScalar(tmpMatrix, scalar);
+            double scalar = Math.Round( 1 / (a * d - b * c), 2);
+
+            return MultiplyScalar(tmpMatrix, scalar);
+        }
+        return error;
     }
 }
