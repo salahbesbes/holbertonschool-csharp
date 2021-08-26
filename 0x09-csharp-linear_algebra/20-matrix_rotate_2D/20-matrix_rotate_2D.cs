@@ -26,7 +26,6 @@ internal class MatrixMath
         double width = matrix.GetLength(1);
         double height = matrix.GetLength(0);
 
-
         if (height == 2 && width == 2)
         {
             double[,] res = new double[2, 2];
@@ -35,8 +34,8 @@ internal class MatrixMath
             {
                 double[] row = MatrixMath.GetRow(matrix, i);
 
-                res[i, 0] = Math.Round(row[0] * Math.Cos(angle), 2) - Math.Round( row[1] * Math.Sin(angle), 2);
-                res[i, 1] = Math.Round(row[0] * Math.Sin(angle), 2) + Math.Round( row[1] * Math.Cos(angle), 2);
+                res[i, 0] = Math.Round( Math.Round(row[0] * Math.Cos(angle), 2) - Math.Round( row[1] * Math.Sin(angle), 2), 2);
+                res[i, 1] = Math.Round( Math.Round(row[0] * Math.Sin(angle), 2) + Math.Round( row[1] * Math.Cos(angle), 2), 2);
             }
 
             return res;

@@ -155,7 +155,7 @@ internal class MatrixMath
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Math.Round(matrix[i, j] *= scalar, 2);
+                    matrix[i, j] *= scalar;
                 }
             }
 
@@ -188,7 +188,7 @@ internal class MatrixMath
 
             double[,] tmpMatrix = new double[2, 2] { { d, -b }, { -c, a } };
 
-            double scalar = Math.Round( 1 / (a * d - b * c), 2);
+            double scalar = 1 / ((a * d) - (b * c));
 
             return MultiplyScalar(tmpMatrix, scalar);
         }
