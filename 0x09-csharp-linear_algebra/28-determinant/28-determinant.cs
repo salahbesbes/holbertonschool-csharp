@@ -91,67 +91,51 @@ internal class MatrixMath
     /// <returns> determinant </returns>
     public static double Determinant(double[,] matrix)
     {
-        if ((matrix.GetLength(0) == 3 || matrix.GetLength(0) == 2)
-            && matrix.GetLength(0) == matrix.GetLength(1))
+        double width = matrix.GetLength(1);
+        double height = matrix.GetLength(0);
+
+        if (height == 2 && width == 2)
         {
-            double width = matrix.GetLength(1);
-            double height = matrix.GetLength(0);
+            return Math.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
+        }
+        else if (height == 3 && width == 3)
+        {
+            double[] col1 = GetColumn(matrix, 0);
+            double[] col2 = GetColumn(matrix, 1);
+            double[] diagonal;
+            double sumForwordDiagonal = 0;
+            double sumBackwardDiagonal = 0;
 
-            if (height == 2)
+            matrix = AddColumn(matrix, col1);
+            matrix = AddColumn(matrix, col2);
+
+            for (int i = 0; i < width; i++)
             {
-                return Math.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
+                diagonal = GetForwordDiagonal(matrix, i);
+
+                double productDiagonal = 1;
+
+                foreach (double item in diagonal)
+                {
+                    productDiagonal *= item;
+                }
+                sumForwordDiagonal += productDiagonal;
             }
-            else
+
+            for (int j = (int)width + 1; j >= width - 1; j--)
             {
-                double[] col1 = GetColumn(matrix, 0);
-                double[] col2 = GetColumn(matrix, 1);
-                double[] diagonal;
-                double sumForwordDiagonal = 0;
-                double sumBackwardDiagonal = 0;
-                matrix = AddColumn(matrix, col1);
-                matrix = AddColumn(matrix, col2);
+                diagonal = GetBackwordDiagonal(matrix, j);
 
-                PrintMatrix(matrix);
-                for (int i = 0; i < width; i++)
+                double productDiagonal = 1;
+                foreach (double item in diagonal)
                 {
-                    diagonal = GetForwordDiagonal(matrix, i);
-
-                    double productDiagonal = 1;
-
-                    foreach (double item in diagonal)
-                    {
-                        productDiagonal *= item;
-                    }
-                    sumForwordDiagonal += productDiagonal;
+                    productDiagonal *= item;
                 }
-
-                for (int j = (int)width + 1; j >= width - 1; j--)
-                {
-                    diagonal = GetBackwordDiagonal(matrix, j);
-
-                    double productDiagonal = 1;
-                    foreach (double item in diagonal)
-                    {
-                        productDiagonal *= item;
-                    }
-                    sumBackwardDiagonal += productDiagonal;
-                }
-                return Math.Round(sumForwordDiagonal - sumBackwardDiagonal, 2);
+                sumBackwardDiagonal += productDiagonal;
             }
+            return Math.Round(sumForwordDiagonal - sumBackwardDiagonal, 2);
         }
 
         return -1;
-    }
-
-    private static void PrintMatrix(double[,] matrix)
-    {
-        for (int row = 0; row < matrix.GetLength(0); row++)
-        {
-            for (int col = 0; col < matrix.GetLength(1); col++)
-            {
-                Console.Write("{0}\t", matrix[row, col]);
-            }
-            Console.WriteLine();
-        }
     }
 }
