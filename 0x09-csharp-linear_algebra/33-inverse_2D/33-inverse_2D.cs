@@ -177,8 +177,8 @@ internal class MatrixMath
         if (height != 2 || width != 2)
             return error;
 
-        /*double det = Determinant(matrix);
-        if (det == 0) return error;*/
+        double det = Determinant(matrix);
+        if (det == 0) return error;
 
         double a = matrix[0, 0];
         double b = matrix[0, 1];
