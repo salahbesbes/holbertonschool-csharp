@@ -2,9 +2,9 @@
 /// <typeparam name="T"> Any Type </typeparam>
 public class Queue<T>
 {
-	public static int count = 0;
-	public Node head;
-	public Node tail;
+	public Node head { get; set; }
+	public Node tail { get; set; }
+	public static int count { get; set; } = 0;
 
 	/// <summary> return a type of </summary>
 	/// <returns> string </returns>
@@ -34,8 +34,8 @@ public class Queue<T>
 	/// <summary> Node encapsulate the data we want to work on </summary>
 	public class Node
 	{
-		public Node next;
-		public T value = default(T);
+		public Node next { get; set; }
+		public T value { get; set; } = default(T);
 
 		public Node(T value)
 		{
