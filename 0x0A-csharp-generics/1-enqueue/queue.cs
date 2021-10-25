@@ -1,6 +1,6 @@
 ﻿/// <summary> Geric </summary>
 /// <typeparam name="T"> Any Type </typeparam>
-internal class Queue<T>
+public class Queue<T>
 {
 	public static int count = 0;
 	public Node head;
@@ -21,7 +21,7 @@ internal class Queue<T>
 	}
 
 	/// <summary> add new node to the tail of the queue </summary>
-	/// <param name="newNode"> </param>
+	/// <param name="value"> </param>
 	public void Enqueue(T value)
 	{
 		Node newNode = new Node(value);
