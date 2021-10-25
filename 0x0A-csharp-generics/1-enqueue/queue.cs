@@ -27,10 +27,7 @@ public class Queue<T>
 		Node newNode = new Node(value);
 		if (count == 0) head = newNode;
 		else if (count == 1) tail = newNode;
-		else
-		{
-			tail.next = newNode;
-		}
+		else tail.next = newNode;
 		count++;
 	}
 
