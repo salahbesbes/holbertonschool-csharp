@@ -1,1 +1,1 @@
-# /0x0A-csharp-generics Generic Class
+# 0x0A-csharp-generics Generic Class
