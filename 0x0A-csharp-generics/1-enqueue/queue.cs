@@ -25,9 +25,16 @@ public class Queue<T>
 	public void Enqueue(T value)
 	{
 		Node newNode = new Node(value);
-		if (count == 0) head = newNode;
-		else if (count == 1) tail = newNode;
-		else tail.next = newNode;
+		if (count == 0)
+		{
+			head = newNode;
+			tail = newNode;
+		}
+		else
+		{
+			tail.next = newNode;
+			tail = newNode;
+		}
 		count++;
 	}
 
