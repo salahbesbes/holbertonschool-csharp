@@ -51,6 +51,8 @@ public class Decoration : Base, IInteractive, IBreakable
 	/// <param name="isQuestItem"> </param>
 	public Decoration(string name = "Decoration", int durability = 1, bool isQuestItem = false)
 	{
+		if (durability < 0) throw new System.Exception("Durability must be greater than 0");
+
 		this.name = name;
 		this.durability = durability;
 		this.isQuestItem = isQuestItem;
@@ -62,7 +64,6 @@ public class Decoration : Base, IInteractive, IBreakable
 		get { return _durability; }
 		set
 		{
-			if (value < 0) throw new System.Exception("Durability must be greater than 0");
 			_durability = value;
 		}
 	}
