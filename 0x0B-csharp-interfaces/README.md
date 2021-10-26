@@ -1,0 +1,1 @@
+# abstarct + interface Class
