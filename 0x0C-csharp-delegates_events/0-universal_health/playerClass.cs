@@ -4,20 +4,20 @@
 public class Player
 {
         /// <summary> name props </summary>
-        private string name { get; set; } = "Player";
+        protected string name { get; set; } = "Player";
 
         /// <summary> maxHP props </summary>
-        private float maxHp { get; set; } = 100f;
+        protected float maxHp { get; set; } = 100f;
 
         /// <summary> hp props </summary>
-        private float hp { get; set; }
+        protected float hp { get; set; }
 
         /// <summary> default constructor </summary>
         /// <param name="name"> </param>
         public Player(string name)
         {
                 this.name = name;
-                this.maxHp = 100;
+                this.maxHp = 100f;
                 hp = maxHp;
         }
 
