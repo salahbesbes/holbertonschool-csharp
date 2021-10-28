@@ -3,8 +3,13 @@
 /// <summary> enum modifier </summary>
 public enum Modifier
 {
+        /// <summary> weak </summary>
         Weak,
+
+        /// <summary> base </summary>
         Base,
+
+        /// <summary> strong </summary>
         Strong
 }
 
