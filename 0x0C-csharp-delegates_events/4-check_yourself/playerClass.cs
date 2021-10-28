@@ -16,9 +16,55 @@ public enum Modifier
 /// <summary> delegate modifier </summary>
 public delegate float CalculateModifier(float baseValue, Modifier modifier);
 
+/// <summary> hp args </summary>
+public class CurrentHPArgs : EventArgs
+{
+        /// <summary> current hp </summary>
+        public readonly float currentHp;
+
+        /// <summary> constructor </summary>
+        /// <param name="newHp"> </param>
+        public CurrentHPArgs(float newHp)
+        {
+                currentHp = newHp;
+        }
+}
+
 /// <summary> class player </summary>
 public class Player
 {
+        /// <summary> event </summary>
+        public event EventHandler<CurrentHPArgs> HPCheck;
+
+        /// <summary> status </summary>
+        private string status;
+
+        /// <summary> name props </summary>
+        private string name;
+
+        /// <summary> maxHP props </summary>
+        private float maxHp = 100f;
+
+        /// <summary> hp props </summary>
+        private float hp;
+
+        private void CheckStatus(object sender, CurrentHPArgs e)
+        {
+                if (e.currentHp == maxHp)
+                        status = $"{name} is in perfect health!";
+                else if (e.currentHp >= maxHp / 2 && e.currentHp < maxHp)
+                        status = $"{name} is doing well!";
+                else if (e.currentHp >= maxHp / 4 && e.currentHp < maxHp / 2)
+                        status = $"{name} isn't doing too great...";
+                else if (e.currentHp >= maxHp / 4 && e.currentHp < maxHp / 2)
+                        status = $"{name} isn't doing too great...";
+                else if (e.currentHp > 0 && e.currentHp < maxHp / 4)
+                        status = $"{name} needs help!";
+                else status = $"{name} is knocked out!";
+
+                Console.WriteLine(status);
+        }
+
         /// <summary> apply modifier </summary>
         /// <param name="baseValue"> </param>
         /// <param name="modifier"> </param>
@@ -29,15 +75,6 @@ public class Player
                 else if (modifier is Modifier.Base) return baseValue;
                 else return 1.5f * baseValue;
         }
-
-        /// <summary> name props </summary>
-        private string name;
-
-        /// <summary> maxHP props </summary>
-        private float maxHp = 100f;
-
-        /// <summary> hp props </summary>
-        private float hp;
 
         /// <summary> take damage </summary>
         /// <param name="damage"> </param>
@@ -54,9 +91,9 @@ public class Player
         public void ValidateHP(float newHealthVal)
         {
                 if (newHealthVal < 0) newHealthVal = 0;
-                if (newHealthVal > maxHp) newHealthVal = maxHp;
-
+                else if (newHealthVal > maxHp) newHealthVal = maxHp;
                 hp = newHealthVal;
+                HPCheck?.Invoke(this, new CurrentHPArgs(hp));
         }
 
         /// <summary> heal damage </summary>
@@ -87,6 +124,9 @@ public class Player
                 this.name = name;
                 this.maxHp = maxHp;
                 hp = maxHp;
+                status = $"{name} is ready to go!";
+
+                HPCheck += CheckStatus;
         }
 
         /// <summary> print health </summary>
