@@ -56,9 +56,7 @@ public class Player
                         status = $"{name} is doing well!";
                 else if (e.currentHp >= maxHp / 4 && e.currentHp < maxHp / 2)
                         status = $"{name} isn't doing too great...";
-                else if (e.currentHp >= maxHp / 4 && e.currentHp < maxHp / 2)
-                        status = $"{name} isn't doing too great...";
-                else if (e.currentHp > 0 && e.currentHp < maxHp / 4)
+                else if (e.currentHp > 0 && e.currentHp < maxHp / 2)
                         status = $"{name} needs help!";
                 else status = $"{name} is knocked out!";
 
@@ -82,8 +80,8 @@ public class Player
         {
                 if (damage < 0) damage = 0;
                 float newHealthVal = hp - damage;
-                ValidateHP(newHealthVal);
                 Console.WriteLine($"{name} takes {damage} damage!");
+                ValidateHP(newHealthVal);
         }
 
         /// <summary> set new health </summary>
@@ -102,9 +100,9 @@ public class Player
         {
                 if (heal < 0) heal = 0;
                 float newHealthVal = hp + heal;
-                ValidateHP(newHealthVal);
 
                 Console.WriteLine($"{name} heals {heal} HP!");
+                ValidateHP(newHealthVal);
         }
 
         /// <summary> delegate </summary>
