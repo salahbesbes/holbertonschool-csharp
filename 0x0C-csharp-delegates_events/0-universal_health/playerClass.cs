@@ -4,27 +4,18 @@
 public class Player
 {
         /// <summary> name props </summary>
-        protected string name { get; set; } = "Player";
+        private string name;
 
         /// <summary> maxHP props </summary>
-        protected float maxHp { get; set; } = 100f;
+        private float maxHp = 100f;
 
         /// <summary> hp props </summary>
-        protected float hp { get; set; }
-
-        /// <summary> default constructor </summary>
-        /// <param name="name"> </param>
-        public Player(string name)
-        {
-                this.name = name;
-                this.maxHp = 100f;
-                hp = maxHp;
-        }
+        private float hp;
 
         /// <summary> constructor </summary>
         /// <param name="name"> </param>
         /// <param name="maxHp"> </param>
-        public Player(string name, float maxHp)
+        public Player(string name = "Player", float maxHp = 100f)
         {
                 if (maxHp <= 0)
                 {
