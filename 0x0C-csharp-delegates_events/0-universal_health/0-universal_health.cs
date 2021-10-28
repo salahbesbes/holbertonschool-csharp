@@ -12,6 +12,15 @@ public class Player
         /// <summary> hp props </summary>
         private float hp { get; set; }
 
+        /// <summary> default constructor </summary>
+        /// <param name="name"> </param>
+        public Player(string name)
+        {
+                this.name = name;
+                this.maxHp = 100;
+                hp = maxHp;
+        }
+
         /// <summary> constructor </summary>
         /// <param name="name"> </param>
         /// <param name="maxHp"> </param>
