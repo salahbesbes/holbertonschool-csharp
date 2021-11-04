@@ -33,10 +33,7 @@ namespace InventoryLibrary
 			string fileName = "../../../../storage/inventory_manager.json";
 			string jsonString = JsonSerializer.Serialize(objects, options);
 			File.WriteAllText(fileName, jsonString);
-			foreach (var item in objects)
-			{
-				//Console.WriteLine(item.Key, item.Value);
-			}
+
 		}
 
 		public void Load()
