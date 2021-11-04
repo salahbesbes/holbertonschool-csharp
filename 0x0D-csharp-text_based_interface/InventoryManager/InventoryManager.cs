@@ -1,7 +1,6 @@
-﻿using InventoryLibrary;
+using InventoryLibrary;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
 namespace InventoryManager
@@ -76,16 +75,16 @@ namespace InventoryManager
 			{
 				string className = arguments.Dequeue();
 				foreach (var item in storage.objects.Where(
-						item => item.Value.GetType().Name == className))
+						item => item.Key.Split(".")[0] == className))
 				{
-					Console.WriteLine(item.Value);
+					Console.WriteLine($"{item.Key}: {item.Value}");
 				}
 			}
 			else
 			{
 				foreach (var item in storage.objects)
 				{
-					Console.WriteLine(item.Value);
+					Console.WriteLine($"{item.Key}: {item.Value}");
 				}
 			}
 		}
@@ -152,6 +151,7 @@ namespace InventoryManager
 						break;
 
 					default:
+						Console.WriteLine($"<{className}> is not a valid object type");
 						break;
 				}
 			}
@@ -178,7 +178,8 @@ namespace InventoryManager
 							}
 							catch (Exception)
 							{
-								Console.WriteLine("didnt found any match Repeat search Y/N");
+								Console.WriteLine($"Object <id> could not be found");
+								Console.WriteLine("Repeat search Y/N");
 								string yes = Console.ReadLine();
 								if (yes == "n") break;
 								else
@@ -191,17 +192,17 @@ namespace InventoryManager
 					}
 					else
 					{
-						Console.WriteLine($"pls select an <id> of <{className}> ");
+						Console.WriteLine($"Object <id> could not be found");
 					}
 				}
 				else
 				{
-					Console.WriteLine("pls select <User> <id> Or <Item> <id>");
+					Console.WriteLine($"<{className}> is not a valid object type");
 				}
 			}
 			else
 			{
-				Console.WriteLine("pls select <User> <id> Or <Item> <id>");
+				Console.WriteLine($"<ClassName> is not a valid object type");
 			}
 		}
 
@@ -228,12 +229,13 @@ namespace InventoryManager
 							}
 							catch (Exception)
 							{
-								Console.WriteLine("didnt found any match Repeat search Y/N");
+								Console.WriteLine($"Object <id> could not be found");
+								Console.WriteLine("Repeat search Y/N");
 								string yes = Console.ReadLine();
 								if (yes == "n") break;
 								else
 								{
-									Console.WriteLine($"pls select an <id> of <{className}> ");
+									Console.WriteLine($"Object <{classId}> could not be found");
 									classId = Console.ReadLine();
 								}
 							}
@@ -241,17 +243,17 @@ namespace InventoryManager
 					}
 					else
 					{
-						Console.WriteLine($"pls select an <id> of <{className}> ");
+						Console.WriteLine($"Object <id> could not be found");
 					}
 				}
 				else
 				{
-					Console.WriteLine("pls select <User> <id> Or <Item> <id>");
+					Console.WriteLine($"<{className}> is not a valid object type");
 				}
 			}
 			else
 			{
-				Console.WriteLine("pls select <User> <id> Or <Item> <id>");
+				Console.WriteLine($"<className> is not a valid object type");
 			}
 		}
 
@@ -326,6 +328,7 @@ namespace InventoryManager
 										break;
 
 									default:
+										Console.WriteLine($"<{className}> is not a valid object type");
 										break;
 								}
 								storage.Save();
@@ -334,12 +337,13 @@ namespace InventoryManager
 							}
 							catch (Exception)
 							{
-								Console.WriteLine("didnt found any match Repeat search Y/N");
+								Console.WriteLine($"Object <{classId}> could not be found");
+								Console.WriteLine("Repeat search Y/N");
 								string yes = Console.ReadLine();
 								if (yes == "n") break;
 								else
 								{
-									Console.WriteLine($"pls select an <id> of <{className}> ");
+									Console.WriteLine($"enter new {className} <id>");
 									classId = Console.ReadLine();
 								}
 							}
@@ -347,17 +351,17 @@ namespace InventoryManager
 					}
 					else
 					{
-						Console.WriteLine($"pls select an <id> of <{className}> ");
+						Console.WriteLine($"Object <id> could not be found");
 					}
 				}
 				else
 				{
-					Console.WriteLine("pls select <User> <id> Or <Item> <id>");
+					Console.WriteLine($"<{className}> is not a valid object type");
 				}
 			}
 			else
 			{
-				Console.WriteLine("pls select <User> <id> Or <Item> <id>");
+				Console.WriteLine($"<className> is not a valid object type");
 			}
 		}
 	}
